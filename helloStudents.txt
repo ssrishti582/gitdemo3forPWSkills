@@ -1,0 +1,7 @@
+Hello everyone!!!
+
+This is my first session on git
+
+and i hope you all will be loving it...
+
+See you soon...
