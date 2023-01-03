@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static int bubblesort(int arr[]){
+        int n=arr.length;int swap=0;
+        for(int turns=0;turns<n-1;turns++){
+            for(int j=0;j<n-1-turns;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    swap++;
+                }
+            }
+        }
+        return swap;
+    }
+    
+    public static void printarr(int arr[]){
+        int n=arr.length;
+        for(int i=0 ;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+    public static void main(String arg[]){
+        int arr[]={1,2,3,4,5};
+        // bubblesort(arr);
+        int k=bubblesort(arr);
+        if(k==0){
+            System.out.print("no swapping is needed");
+        }else{
+            System.out.print("swaps:"+k);
+        }
+        printarr(arr);
+    }
+};
