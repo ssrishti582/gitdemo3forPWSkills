@@ -1,0 +1,61 @@
+import java.util.*;
+public class Main{
+    public static int bubblesort(int arr[]){
+        int n=arr.length;int swap=0;
+        for(int turns=0;turns<n-1;turns++){
+            for(int j=0;j<n-1-turns;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    swap++;
+                }
+            }
+        }
+        return swap;
+    }
+    
+    public static void selectionsort(int arr[]){
+        int n=arr.length;
+        for(int i=0;i<n-1;i++){
+            int minpos=i;
+            for(int j=i+1;j<=n-1;j++){
+                if(arr[minpos]>arr[j]){
+                    minpos=j;
+                }
+            }
+            int temp=arr[minpos];
+            arr[minpos]=arr[i];
+            arr[i]=temp;
+        }
+    }
+    
+    public static void insertionsort(int arr[]){
+        int n=arr.length;
+        for(int i=1;i<n-1;i++){
+            int curr=arr[i];
+            int prev=i-1;
+            //to find the correct position for insertion//
+            while(prev>=0 && arr[prev]<curr){
+                arr[prev+1]=arr[prev];
+                prev--;
+            }
+            //insertion
+            arr[prev+1]=curr;
+        }
+    }
+    
+    public static void printarr(int arr[]){
+        int n=arr.length;
+        for(int i=0 ;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+    public static void main(String arg[]){
+        int arr[]={9,8,7,6,5,4};
+        
+        insertionsort(arr);
+        printarr(arr);
+    }
+};
